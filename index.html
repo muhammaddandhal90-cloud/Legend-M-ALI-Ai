@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legend M Ali AI - Elite Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-area">
+                <i class="fa-solid fa-brain brain-icon"></i>
+                <h2>LMA AI</h2>
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="active" onclick="switchTab('chat')"><i class="fa-solid fa-message"></i> AI Chat Interface</a>
+                <a href="#" onclick="switchTab('admin')"><i class="fa-solid fa-sliders"></i> Admin Control Panel</a>
+            </nav>
+            <div class="user-profile">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Root Admin: M Ali</span>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="main-content">
+            <!-- Chat Tab -->
+            <section id="chat-tab" class="tab-content active">
+                <header class="top-bar">
+                    <div class="title-section">
+                        <h1>Legend M Ali AI Terminal</h1>
+                        <span class="status-badge"><span class="dot"></span> 24/7 Engine Active</span>
+                    </div>
+                    <div class="model-selector-wrapper">
+                        <label for="ai-model"><i class="fa-solid fa-microchip"></i> Engine: </label>
+                        <select id="ai-model">
+                            <option value="gemini">Google Gemini Ultra</option>
+                            <option value="gpt4">OpenAI GPT-4o</option>
+                            <option value="claude">Anthropic Claude 3.5 Opus</option>
+                            <option value="deepseek">DeepSeek V3 (Deep Research)</option>
+                        </select>
+                    </div>
+                </header>
+
+                <div class="chat-box" id="chat-box">
+                    <div class="message ai-message">
+                        <i class="fa-solid fa-robot bot-avatar"></i>
+                        <div class="message-text">
+                            Aadaab Boss **Legend M Ali**! Aapka Multi-AI Engine fully operational hai. Admin Panel se API Keys lagayein aur live processing shuru karein.
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="input-area">
+                    <form id="chat-form">
+                        <div class="input-wrapper">
+                            <input type="text" id="user-input" placeholder="Ask Legend M Ali AI anything..." required autocomplete="off">
+                            <button type="submit" id="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                </footer>
+            </section>
+
+            <!-- Admin Panel Tab -->
+            <section id="admin-tab" class="tab-content">
+                <header class="top-bar">
+                    <div class="title-section">
+                        <h1>Admin Control Center</h1>
+                        <p>Configure API endpoints and secure credentials permanently</p>
+                    </div>
+                </header>
+
+                <div class="admin-container">
+                    <form id="admin-settings-form">
+                        <div class="settings-card">
+                            <h3><i class="fa-key-skeleton"></i> Gemini API Configuration</h3>
+                            <div class="form-group">
+                                <label>Gemini Pro/Ultra API Key</label>
+                                <input type="password" id="gemini-key" placeholder="AIzaSy...">
+                            </div>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3><i class="fa-brands fa-openai"></i> OpenAI GPT-4 API Configuration</h3>
+                            <div class="form-group">
+                                <label>ChatGPT API Key</label>
+                                <input type="password" id="gpt-key" placeholder="sk-proj-...">
+                            </div>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3><i class="fa-solid fa-bolt"></i> DeepSeek API Configuration</h3>
+                            <div class="form-group">
+                                <label>DeepSeek API Key</label>
+                                <input type="password" id="deepseek-key" placeholder="sk-...">
+                            </div>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3><i class="fa-solid fa-gears"></i> System Customization</h3>
+                            <div class="form-group">
+                                <label>AI System Greeting Message</label>
+                                <textarea id="system-prompt" rows="3">Welcome, Boss! Main Legend M Ali AI hoon.</textarea>
+                            </div>
+                        </div>
+
+                        <div class="admin-actions">
+                            <button type="button" class="btn btn-save" onclick="saveSettings()">
+                                <i class="fa-solid fa-floppy-disk"></i> Save Settings Permanently
+                            </button>
+                            <span id="save-status" class="save-status-text"></span>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
